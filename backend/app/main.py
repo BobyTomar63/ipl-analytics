@@ -14,8 +14,12 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origins=[
+        "http://localhost:5173",
+        "https://ipl-analytics-blue.vercel.app",
+        "*"
+    ],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -25,7 +29,6 @@ app.include_router(teams.router)
 app.include_router(players.router)
 app.include_router(matches.router)
 app.include_router(dashboard.router)
-
 
 @app.get("/")
 def home():

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-const API_URL = "http://localhost:8000"
+const API_URL = "https://ipl-analytics-backend-kbfv.onrender.com"
 
 function Teams() {
   const [teams, setTeams] = useState([])
